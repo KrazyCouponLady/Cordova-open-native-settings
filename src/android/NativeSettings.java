@@ -24,7 +24,12 @@ public class NativeSettings extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
-		String packageId = args.getString(0);
+		String packageId = "";
+		try {
+			packageId = args.getString(0);
+		}
+		catch (JSONException ignore) {
+		}
         PluginResult.Status status = PluginResult.Status.OK;
         String result = "";
 
