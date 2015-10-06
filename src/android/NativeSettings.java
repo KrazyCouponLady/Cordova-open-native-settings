@@ -39,8 +39,8 @@ public class NativeSettings extends CordovaPlugin {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_AIRPLANE_MODE_SETTINGS));
         } else if (action.equals("apn")) {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APN_SETTINGS));
-        } else if (action.equals("application_details"), Uri.parse("package:com.ionicframework.krazyionic138043")) {
-            this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS));
+        } else if (action.equals("application_details")) {
+            this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:com.ionicframework.krazyionic138043")));
         } else if (action.equals("application_development")) {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS));
         } else if (action.equals("application")) {
