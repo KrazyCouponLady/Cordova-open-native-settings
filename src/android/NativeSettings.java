@@ -24,6 +24,7 @@ public class NativeSettings extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
+		String packageId = args.getString(0);
         PluginResult.Status status = PluginResult.Status.OK;
         String result = "";
 
@@ -41,7 +42,7 @@ public class NativeSettings extends CordovaPlugin {
         } else if (action.equals("apn")) {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APN_SETTINGS));
         } else if (action.equals("application_details")) {
-            this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:com.ionicframework.krazyionic138043")));
+            this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + packageId)));
         } else if (action.equals("application_development")) {
             this.cordova.getActivity().startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS));
         } else if (action.equals("application")) {
